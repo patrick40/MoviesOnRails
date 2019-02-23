@@ -1,0 +1,46 @@
+<h2>You are Going To Edit Existing Movie </h2>
+
+
+<% if @film.errors.any? %>   
+
+<h3>The Movie was not created check the following</h3>
+
+<ul>
+   <% @film.each do |msg| %> 
+      <li><%= msg %></li>
+   <% end %>
+</ul>
+<% end %>
+
+<%= form_for @film do |f| %>
+   <p>
+        <%= f.label :title, "Title" %><br>
+        <%= f.text_field :title %>
+   </p>
+
+   <p>
+    <%= f.label :category, "Category" %><br>
+    <%= f.text_area :category %>
+   </p>
+
+   <p>
+   <%= f.label :price, "Price" %><br>
+    <%= f.text_field :price %>
+   </p>
+
+   <p>
+   <%= f.label :year, "Year" %><br>
+    <%= f.text_field :year %>
+   </p>
+
+    <p>
+    <%= f.label :attachment %>   
+    <%= f.file_field :attachment %> 
+    </p>   
+
+    <p>
+   <%= f.submit "Update Movie", class: "btn btn-primary" %>
+   </p>
+<% end %>  
+
+

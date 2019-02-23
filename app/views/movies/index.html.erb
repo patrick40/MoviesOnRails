@@ -1,0 +1,136 @@
+ <style>
+
+.card-img-top
+{
+   height:350px;
+   width:400px;
+}
+
+}
+
+nav li{
+    display: inline-block;
+    margin-right: 15px;
+    padding: 3px;
+    background-color:white;
+}
+nav {
+    background-color: black;
+    padding: 5px;
+    margin-left: 3px;
+    margin-right:3px;
+}
+.footer{
+  background-color:white-black;
+  margin-top:100px;
+  padding-top:20px;
+}
+.search{
+  float:right;
+}
+
+
+}
+
+}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+</style>
+ <div class="jumb">
+<div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                
+                             <p> <h1>Jorah one films entertainement</h1></p>
+                </div>
+              </div>
+              </div>
+                  <div class="container text-center"></div>
+                  <nav class="navbar navbar-dark bg-dark">
+                        <a class="navbar-brand text-white">Action</a>
+                        <a class="navbar-brand text-white">Advanture</a>
+                        <a class="navbar-brand text-white">Drama</a>
+                        <div class="search">
+                        <form class="form-inline">
+                          <input class="form-control mr-sm-2" type="search" placeholder="Search your movies" aria-label="Search">
+                          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                        </div>
+                      </nav>
+
+
+
+
+<center><b><u><h4><%= link_to "Add New Movie", new_movie_path %></h4></u></b></center>  
+<br>   
+<br>   
+
+<div class="album py-5 bg-light">
+        <div class="container">
+        <div class="row">
+ <% @film.each do |m| %> 
+          
+            <div class="col-md-4">
+              <div class="card mb-4 box-shadow">
+                <img src="<%= m.attachment %>" class="card-img-top"  alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"><b>Title:</b><%= m.title %><br>
+                  <b>category:</b><%= m.category %><br>
+                  <b>Year:</b><%= m.year %><br>
+                  <b>price:</b><%= m.price %></p>
+                  <b><%= link_to "Edit", edit_movie_path(@film) %><b> |
+                  <b><%= link_to "Download", m.attachment_url %></b> |
+                  <b><%= link_to "Delete",  m, method: :delete, confirm: "Are you sure you want to delete #{m.attachment}?" %>
+                  </b>
+                  </div>
+                </div>
+              </div>
+              <% end %> 
+            </div>
+            <br>
+            <br>
+            
+            <div class="footer">
+            <h3>Register with us or sign in if you have an acount</h3>
+            <form>
+  <div class="form-row align-items-center">
+    <div class="col-auto">
+      <label class="sr-only" for="inlineFormInputGroup">Username</label>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text"></div>
+        </div>
+        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="enter your email">
+      </div>
+    <div class="col-auto">
+      <label class="sr-only" for="inlineFormInputGroup">Username</label>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <div class="input-group-text"></div>
+        </div>
+        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="password here">
+      </div>
+    </div>
+    <div class="col-auto">
+      <div class="form-check mb-2">
+        <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+        <label class="form-check-label" for="autoSizingCheck">
+          Remember me
+        </label>
+      </div>
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-2">Login</button>
+      <button type="submit" class="btn btn-primary mb-2">Sin Up</button>
+    </div>
+    
+  </div>
+</form>
+            <footer class="text-center">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Back to top</a>
+    </p>
+    <p> &copy; reserved by Patrick Mutabazi!!!</p>
+    <p>New to our site ,guide to getting started with using and enjoying to view and download new movies</p>
+  </div>
+</footer>
+   </div>        

@@ -1,0 +1,19 @@
+<h1>This is The Movie You Have Created</h1>
+
+
+              <div class="card mb-4 box-shadow">
+                <img src="<%= @film.attachment %>" class="card-img-top"  alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text"><b>Title:</b><%= @film.title %><br>
+                  <b>category:</b><%= @film.category %><br>
+                  <b>Year:</b><%= @film.year %><br>
+                  <b>price:</b><%= @film.price %></p>
+                  <b><%= link_to "Edit", edit_movie_path(@film) %><b> |
+                  <b><%= link_to "Download", @film.attachment_url %></b> |
+                  <b><%= link_to "Delete",  @film, method: :delete, confirm: "Are you sure you want to delete #{@movies.attachment}?" %>
+                  
+                 | <b><%= link_to "view all movies", movies_path(@film) %><b>
+                  </b>
+                  </div>
+                </div>
+              </div>

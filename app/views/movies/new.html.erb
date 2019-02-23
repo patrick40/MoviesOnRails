@@ -1,0 +1,54 @@
+
+<html>
+<header>
+<style>
+.attachment{
+   margin-left:580px;
+}
+table{
+   margin-left:500px;
+   margin-top:100px;
+}
+h2{
+   margin-left:500px;
+
+}
+</style>
+</header>
+<h2>Add A New Film</h2>
+<table>
+<div class="text-center">
+
+<%= form_for @film, html: { multipart: true } do |f| %>   
+    
+    <tr>
+    <td><%= f.label :title %></td>
+    <td><%= f.text_field :title %></td>
+    </tr> 
+    
+     <tr>
+     <td><%= f.label :Category %></td>  
+    <td><%= f.text_field :category %></td>
+    </tr>
+    
+    <tr>
+    <td><%= f.label :Year %></td>
+    <td><%= f.text_field :year %></td>
+    </tr>
+    
+    <tr>
+    <td><%= f.label :Price %></td>   
+    <td><%= f.text_field :price %></td> 
+    </tr> 
+    
+    <tr> 
+    <div class="attachment">  
+    <%# <%= f.label :attachment %>    
+    <td><%= f.file_field :attachment %> </td></tr>
+    <tr>
+    <td><%= f.submit "Save",class: "btn btn-primary" %> </td> </tr>
+    </table> 
+ <% end %> 
+
+ 
+ </html>
